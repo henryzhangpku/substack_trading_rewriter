@@ -1,0 +1,21 @@
+// manifest.json
+{
+  "manifest_version": 3,
+  "name": "Substack Viral Trading Blog Rewriter",
+  "version": "1.0",
+  "description": "Rewrites raw Substack blog posts into viral trading blogs using AI.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://substack.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://substack.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
